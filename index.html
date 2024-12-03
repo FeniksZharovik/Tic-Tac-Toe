@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-6">Tic-Tac-Toe</h1>
+        <div id="board" class="grid grid-cols-3 gap-4">
+            <!-- Kotak permainan akan diisi oleh JavaScript -->
+        </div>
+        <p id="message" class="text-center mt-6 text-xl"></p>
+        <button id="change-mode-btn" onclick="showModeModal()" class="mt-4 w-full bg-yellow-500 text-white py-3 rounded hidden">Change Mode</button>
+        <button onclick="resetGame()" class="mt-4 w-full bg-blue-500 text-white py-3 rounded">Reset Game</button>
+    </div>
+
+    <!-- Modal for Game Mode Selection -->
+    <div id="mode-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm">
+            <h2 class="text-2xl font-bold mb-4">Choose Game Mode</h2>
+            <button onclick="startGame('PVP')" class="bg-green-500 text-white py-2 px-4 rounded mb-2">Player vs Player</button>
+            <button onclick="startGame('PVB')" class="bg-red-500 text-white py-2 px-4 rounded">Player vs Bot</button>
+        </div>
+    </div>
+
+    <!-- Modal for Notifications -->
+    <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm">
+            <img id="modal-icon" src="" alt="Icon" class="w-24 h-24 mx-auto mb-4">
+            <p id="modal-message" class="text-xl"></p>
+        </div>
+    </div>
+
+    <script src="static/game.js"></script>
+</body>
+
+</html>
